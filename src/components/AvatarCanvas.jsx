@@ -1,7 +1,9 @@
 import React, {Suspense, useRef} from 'react'
 import {Canvas, useFrame} from '@react-three/fiber'
-import { OrbitControls, Environment, useGLTF } from '@react-three/drei'
+import { OrbitControls, Environment,Html, useGLTF } from '@react-three/drei'
 import Loader from './Loader'
+import ModelExporter from './ModelExporter'
+
 import 
 { 
   BodyModels,
@@ -82,6 +84,17 @@ const Avatar = () => {
                 <Suspense fallback={<Loader />}>
                     <Avatar />
                 <Environment preset='studio'/>
+                <Html 
+                   style={{
+                    position: 'absolute',
+                    top: '1rem',
+                    right: '1rem',
+                    zIndex: 1,
+                   }}
+                   portal={false}
+                   >
+                    <ModelExporter />
+                   </Html>
                 </Suspense>
                 <OrbitControls enablePan = {false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
                 </Canvas>

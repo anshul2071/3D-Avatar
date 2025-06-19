@@ -1,4 +1,5 @@
 import React from "react";
+import ModelExporter from "./ModelExporter";
 import {
     Box,
     VStack,
@@ -19,8 +20,8 @@ export default function ControlPanel() {
 
 
 
-        setSkinColor, setHairType, setHairColor, setOutFitType, setEyeType, setHeadType, setEarType, setNoseType,
-        setMouthType, setLipsType, setLipsColor, setBodyType,  toggleSunGlasses, toggleNecklace, setShoes, setCap,
+        setSkinColor, setHairType, setHairColor, setOutfitType, setEyeType, setHeadType, setEarType, setNoseType,
+        setMouthType, setLipsType, setLipsColor, setBodyType,  toggleSunglasses, toggleNecklace, setShoes, setCap,
 
         skinColorOptions, hairColorOptions, outfitOptions, eyeOptions, headOptions, earOptions, noseOptions, mouthOptions , lipsOptions,
         lipsColorOptions, bodyOptions,  shoesOptions, capOptions,
@@ -98,7 +99,7 @@ export default function ControlPanel() {
             <FormControl>
                 <FormLabel>Outfit </FormLabel>
                 <Select 
-                   value = {outfitType} onChange= {e => setOutFitType(e.target.value)}>
+                   value = {outfitType} onChange= {e => setOutfitType(e.target.value)}>
                     {outfitOptions.map(opt => (
                         <option key={opt} value={opt}>{opt}</option>
                     ))}
@@ -146,7 +147,7 @@ export default function ControlPanel() {
 
 
         <FormControl as = {HStack}>
-            <Switch isChecked = {accessories.sunglasses} onChange = {toggleSunGlasses}/>
+            <Switch isChecked = {accessories.sunglasses} onChange = {toggleSunglasses}/>
             <Text>Sunglasses</Text>
         </FormControl>
 
